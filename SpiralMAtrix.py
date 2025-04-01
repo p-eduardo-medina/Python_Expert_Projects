@@ -1,3 +1,4 @@
+#Write a function that accepts an integer n and returns an n * n spiral matrix.
 def matrix(n):
     import numpy as np
     newMatrix = np.zeros((n,n))

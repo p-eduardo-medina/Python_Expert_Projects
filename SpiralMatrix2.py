@@ -1,3 +1,4 @@
+#Write a function that accepts an integer n and returns an n * m spiral matrix.
 def matrix(n,m):
     import numpy as np
     newMatrix = np.zeros((n,m))
@@ -40,6 +41,6 @@ def matrix(n,m):
     return listMatrix
 
 
-mat = matrix(8,3)
+mat = matrix(5,5)
 for row in mat:
     print(row)
