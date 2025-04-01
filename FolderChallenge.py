@@ -2,19 +2,10 @@ def last_ancestor(folders, X, Y):
     keys = list(folders.keys())
     keys = keys[::-1]
     subDict = {}
-    for key in keys:
-        subDict[key] = folders[key]
+    
+
         
-        
-        
-        
-        
-        
-        
-        if X in subList and Y in subList:
-            return key
-            
-        
+    
 
 last_ancestor({
   "A": ["B", "C", "D"],
