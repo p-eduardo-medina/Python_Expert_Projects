@@ -6,7 +6,5 @@ def permutations(elements):
         for i in range(len(elements)):
             # nb elements[0:1] works in both string and list contexts
             yield perm[:i] + elements[0:1] + perm[i:]
-            
-            
-
+                                
 print(list(permutations([1,2,3])))
