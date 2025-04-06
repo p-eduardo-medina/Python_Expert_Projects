@@ -8,3 +8,29 @@ for i in range(5):
         print(f'Exeption: {e}')
         a.append(i+1)
 print(a)
+
+
+class NewExeptionLalo(Exception):
+    def __init__(self,message, value):
+        self.message = message
+        self.value = value
+class NewExceptionLAlo2(Exception):
+    def __init__(self, message, value):
+        self.messagge = message
+        self.value = value
+def testValue(Num):
+    if Num > 100:
+        raise NewExeptionLalo('Valor DEmasiado Grande', Num)
+    elif Num<0:
+        raise NewExceptionLAlo2(message = 'Valor muy bajo',value = Num)
+    
+try:
+    testValue(-1)
+except NewExeptionLalo as NEL:
+    print(NEL)
+except NewExceptionLAlo2 as NEL2:
+    print(NEL2)
+finally:
+    print('Fin del proceso')
+    
+
