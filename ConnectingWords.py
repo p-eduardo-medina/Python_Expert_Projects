@@ -27,3 +27,4 @@ print(join(["to", "ops", "psy", "syllable"]),["topsyllable", 1])
 print(join(["aaa", "bbb", "ccc", "ddd"]),["aaabbbcccddd", 0])
 print(join(["abcde", "bcdefghi", "efghi", "fghij", "ghijklmnop"]),["abcdefghijklmnop", 4])
 print(join(["aab", "abcccd", "cdeeef", "effff"]),["aabcccdeeeffff", 2])
+

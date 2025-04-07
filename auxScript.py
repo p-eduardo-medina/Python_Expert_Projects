@@ -5,7 +5,7 @@ for i in range(5):
     try:
         print(a[i])
     except Exception as e:
-        print(f'Exeption: {e}')
+        print(f'Exepcion: <<{e}>>, se agregara el elemento {i} a la lista')
         a.append(i+1)
 print(a)
 
