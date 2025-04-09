@@ -17,7 +17,6 @@ def shortest_path(lst):
             count += abs(diffcoords[0]-coordDict[Num][0]) + abs(diffcoords[1]-coordDict[Num][1])
             diffcoords = [coordDict[Num][0],coordDict[Num][1]]
     except: None
-        
     return count
             
      
