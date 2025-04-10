@@ -6,19 +6,13 @@
 # iron, compress, raze, topple) and expose those data as a single
 # list and not as a list of lists.
 def flatten(r):
-    return AuxFlattern(r,[])
-
+    return AuxFlattern(r,list())
 def AuxFlattern(r, responsearr):
-    if type(r) == list:
-        for element in r:
-            responsearr = AuxFlattern(element,responsearr)
-    else:
-        responsearr.append(r)
+    if type(r) == list : 
+        for element in r:  responsearr = AuxFlattern(element,responsearr)
+    else : responsearr.append(r)
     return responsearr
 
-
-
-#print(f'{flatten([[[[[["direction"], [372], ["one"], [[[[[["Era"]]]], "Sruth", 3337]]], "First"]]]])} // ["direction", 372, "one", "Era", "Sruth", 3337, "First"]')
 
 
 
