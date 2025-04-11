@@ -2,7 +2,6 @@
 # return all possible letter combinations that the number could represent.
 # A mapping of digit to letters (just like on the telephone buttons)
 # is given below. Note that 1 does not map to any letters.
-
 def letter_combinations(digits):
     import itertools
     dictPhone = {1:[''],
@@ -21,7 +20,6 @@ def letter_combinations(digits):
     Combinations = [ list(lst) for lst in Combinations]
     removeIndex = list()
     for index, lst in enumerate(Combinations):
-        flag = False
         listKeys = list()
         for value in lst:
             for key,values in dictPhone.items():
@@ -32,15 +30,6 @@ def letter_combinations(digits):
             removeIndex.append(index)
     Combinations = [''.join(lst) for i,lst in enumerate(Combinations) if i not in removeIndex]
     return Combinations
-            
-        
-    
-    
-    
-    
-    
-    
-    
 
 print(letter_combinations("23")== ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"], "")
 print(f'{letter_combinations("532") == ["jda", "jdb", "jdc", "jea", "jeb", "jec", "jfa", "jfb", "jfc", "kda", "kdb", "kdc", "kea", "keb", "kec", "kfa", "kfb", "kfc", "lda", "ldb", "ldc", "lea", "leb", "lec", "lfa", "lfb", "lfc"]}')
