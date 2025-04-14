@@ -1,6 +1,6 @@
 # The function is given two strings s1 and s2. 
 # Determine if one of the permutations of 
-# haracters of s1 is a substring of s2, return True / False.
+# characters of s1 is a substring of s2, return True / False.
 
 def check_inclusion(s1, s2):
     for indexS2 in range(len(s2)-len(s1)+1):
