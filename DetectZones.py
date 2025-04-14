@@ -10,7 +10,7 @@ def num_regions(grid):
                 for key, Coords in dictOfRegions.items():
                     flag = False
                     for Coord in Coords:
-                        if abs(Coord[0]-row) <= 1 ^ abs(Coord[1]-column)<=1:
+                        if abs(Coord[0]-row) <= 1 ^ abs(Coord[1]-column)<=1:  # ^ Means the XOR Gate
                             dictOfRegions[key].append([row,column])
                             flag = True
                             NotinSet = False
@@ -21,6 +21,12 @@ def num_regions(grid):
             if not bool(dictOfRegions): 
                 dictOfRegions[count] =[[row,column]]
                 count+=1
+    listKeys = []
+    for key, coords in dictOfRegions.items():
+        for subKey,SubCoords in dictOfRegions.items():
+            if any(coord in SubCoords for coord in coords):
+                if key != subKey: listKeys.append([key,subKey])
+    print(listKeys)
     return len(dictOfRegions)
 
 def XOR(A, B):
