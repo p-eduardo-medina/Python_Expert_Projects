@@ -21,11 +21,12 @@ def num_regions(grid):
             if not bool(dictOfRegions): 
                 dictOfRegions[count] =[[row,column]]
                 count+=1
-    listKeys = []
+    listKeys = set()
     for key, coords in dictOfRegions.items():
         for subKey,SubCoords in dictOfRegions.items():
             if any(coord in SubCoords for coord in coords):
-                if key != subKey: listKeys.append([key,subKey])
+                if key != subKey: 
+                    listKeys.append(set([key,subKey]))
     print(listKeys)
     return len(dictOfRegions)
 

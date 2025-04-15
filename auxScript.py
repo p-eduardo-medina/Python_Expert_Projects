@@ -39,3 +39,5 @@ try:
 except Exception as Exc:
     print(f'Error: {Exc}')
 print(f'Vector c = {c}')
+
+

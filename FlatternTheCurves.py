@@ -24,7 +24,8 @@ arr_vectors = [
   ['I', [19.79, 'love', [12.17], "edabit"]], 
   [['The', ['first', ['of', ["May", 0.0, 1, ]]], 2, 3, 4]],
   [7, [11, 'lived', [[229]]]], 
-  ['and', 6, [3, 'scores', ['six', 100]]]]
+  ['and', 6, [3, 'scores', ['six', 100]]]
+  ]
 res_vectors = [
   ['direction', 372, 'one', 'Era', 'Sruth', 3337, 'First'],
   [4666, 5394, 466, 'Saskia', 'DXTD', 'Lexi'],
