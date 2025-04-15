@@ -35,6 +35,6 @@ print(split_into_buckets("fairy dust coated the air", 20) )#➞ ["fairy dust coa
 print(split_into_buckets("a b c d e", 2) )# ["a", "b", "c", "d", "e"]
 print(split_into_buckets("a b c d e", 1) )# ["a", "b", "c", "d", "e"]
 
-print(split_into_buckets("Hola mi nombre es Pedro Eduardo Medina Gonzalez y soy Ingeniero y Físico", 15) )# ["a", "b", "c", "d", "e"]
+print(split_into_buckets("Hola mi nombre es Pedro Eduardo Medina Gonzalez y soy Ingeniero y Físico", 15) )
 
 
