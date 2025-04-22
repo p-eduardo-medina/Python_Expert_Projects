@@ -1,12 +1,14 @@
 # Write a function that returns the 
 # longest non-repeating substring for a string input.
 def longest_nonrepeating_substring(txt):
+    dictPositions = dict()
     for char in txt:
-        POSITIONS = [i for i in range(1,len(txt)) if txt[i] == char]
-        if len(POSITIONS)>1:
-            Pos = POSITIONS[-1]
+        if char not in dictPositions.keys():
+            Positions = [i for i in range(len(txt)) if txt[i] == char]
+            dictPositions[char] = Positions
+    print(dictPositions)
         
-    return Pos
+    return None
             
 
 
