@@ -16,13 +16,6 @@ def is_consecutive(s):
         flagAsce, flagDesc = all(lstNum[i]==lstNum[i+1]-1 for i in range(len(lstNum)-1)), all(lstNum[i]==lstNum[i+1]+1 for i in range(len(lstNum)-1))
         if flagAsce or flagDesc: return True
     return False
-            
-            
-            
-            
-        
-            
-        
 
 actual_param = [
   "121314151617", "123124125", "667666", "23242526", "444445", "1234567", "123412351236",
