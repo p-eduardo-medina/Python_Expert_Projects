@@ -10,10 +10,13 @@ def longest_nonrepeating_substring(txt):
             lstStrings.append(longestSubString)
             longestSubString = char
         if index == len(txt)-2: lstStrings.append(longestSubString)
-    for index,char  in enumerate(lstStrings[:len(lstStrings)-1]):
+    for index  in lstStrings[:len(lstStrings)-1]:
         strTest = lstStrings[index]+lstStrings[index+1]
-        if strTest[0] not in strTest[1:len(strTest)]:
-            lstStrings.append(strTest)
+        for char in strTest:
+            POSITIONS = [i for i in range(1,len(strTest)) if strTest[i] == char]
+            if len(POSITIONS)>1:
+                Pos = POSITIONS[-1]
+            
     return max(lstStrings, key=len)
             
 
