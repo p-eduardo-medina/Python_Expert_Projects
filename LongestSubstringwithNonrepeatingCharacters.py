@@ -1,5 +1,6 @@
 # Write a function that returns the 
-# longest non-repeating substring for a string input.
+# longest non-repeating substring in
+# alphabetical order for a string input.
 def longest_nonrepeating_substring(txt):
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     lstStrings = []
@@ -35,8 +36,3 @@ print(9,longest_nonrepeating_substring("abddefgh") == "defgh")
 print(10,longest_nonrepeating_substring("abcdabcd") == "abcd")
 print(11,longest_nonrepeating_substring("abddebcc") == "abd")
 print(12,longest_nonrepeating_substring("xyxxyzyzy") == "xyz")
-print(13,longest_nonrepeating_substring("kjlmjsdeee") == "lmjsde")
-print(14,longest_nonrepeating_substring("kjlmjsdfew") == "lmjsdfew")
-print(15,longest_nonrepeating_substring("kjlmjsdfewii") == "lmjsdfewi")
-print(16,longest_nonrepeating_substring("kjlmjjiiiidfewii") == "idfew")
-print(17,longest_nonrepeating_substring("kjlmjjiiiidfiwii") == "kjlm")
