@@ -14,8 +14,7 @@ def is_consecutive(s):
             if len(countNum) == length or index==len(s)-1:
                 lstNum.append(int(countNum))
                 countNum = ''
-        flagAsce = all(lstNum[i]==lstNum[i+1]-1 for i in range(len(lstNum)-1))
-        flagDesc = all(lstNum[i]==lstNum[i+1]+1 for i in range(len(lstNum)-1))
+        flagAsce, flagDesc = all(lstNum[i]==lstNum[i+1]-1 for i in range(len(lstNum)-1)), all(lstNum[i]==lstNum[i+1]+1 for i in range(len(lstNum)-1))
         if flagAsce or flagDesc: return True
         
     return False
