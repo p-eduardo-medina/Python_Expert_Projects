@@ -5,7 +5,6 @@
 # otherwise, return False.
 
 def is_consecutive(s):
-    c = 1
     for length in range(1,len(s)):
         lstNum = []
         countNum = ''
@@ -16,7 +15,6 @@ def is_consecutive(s):
                 countNum = ''
         flagAsce, flagDesc = all(lstNum[i]==lstNum[i+1]-1 for i in range(len(lstNum)-1)), all(lstNum[i]==lstNum[i+1]+1 for i in range(len(lstNum)-1))
         if flagAsce or flagDesc: return True
-        
     return False
             
             
