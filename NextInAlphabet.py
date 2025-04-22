@@ -65,4 +65,4 @@ for i, z in enumerate(ANSW):
     if next_letters(TEST[i]) == z:
         print(f'{Fore.GREEN}Correcto!{Style.RESET_ALL}\tEl resultado de {TEST[i]} es {z}')
     else:
-        print(f'El resultado de {TEST[i]} {Fore.RED}NO ES correcto!{Style.RESET_ALL}, {next_letters(TEST[i])} != {ANSW[i]}')
+        print(f'{Fore.RED}No esCorrecto!{Style.RESET_ALL}\tEl resultado de {TEST[i]} no es {z}')
