@@ -27,6 +27,6 @@ t1 = "Soylent Green is people."
 t2 = "Darth Vader is Luke's father."
 t3 = 'Malcolm Crowe was dead the whole time.'
 
-print(vigenere(t1, 'spoiler')== 'KDMTPRKYGSMYMJHTCXWI')
-print(vigenere(t2, 'spoiler')== 'VPFBSZRVTFQDPLCTGNLXYWG')
-print(vigenere(t3, 'edabit')== 'QDLDWEQFRPEXADSEMTHWHFEASOEUQFI')
+print(vigenere(t1, 'spoiler') == 'KDMTPRKYGSMYMJHTCXWI')
+print(vigenere(t2, 'spoiler') == 'VPFBSZRVTFQDPLCTGNLXYWG')
+print(vigenere(t3, 'edabit') == 'QDLDWEQFRPEXADSEMTHWHFEASOEUQFI')
