@@ -1,4 +1,4 @@
-#Given a positive integer n, 
+# Given a positive integer n, 
 # implement a function that finds 
 # the smallest number that is evenly 
 # divisible by the integers 1 through n inclusive.
