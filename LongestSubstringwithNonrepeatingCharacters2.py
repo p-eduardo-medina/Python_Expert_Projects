@@ -6,7 +6,14 @@ def longest_nonrepeating_substring(txt):
         if char not in dictPositions.keys():
             Positions = [i for i in range(len(txt)) if txt[i] == char]
             dictPositions[char] = Positions
-    print(dictPositions)
+            maxValue = ['',0]
+    for key, values in dictPositions.items():
+        for index in range(len(values[:len(values)-1])):
+            if abs(values[index]-values[index+1])>maxValue[1]:
+                maxValue = [key, abs(values[index]-values[index+1])]
+    print(maxValue)
+            
+        
         
     return None
             
