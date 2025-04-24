@@ -7,14 +7,12 @@ def next_number(num):
     permutationNums = list(set([int(''.join(permutation)) for permutation in itertools.permutations(lstNums)]))
     permutationNums = [number for number in permutationNums if number!=num]
     dictDiffNumbers = dict()
-    for Num in permutationNums:
+    for Num in permutationNums: 
         if Num>num: dictDiffNumbers[Num] = abs(num-Num)
     if not dictDiffNumbers: return num
     minValue = min(dictDiffNumbers.values())
     minValues = [key for key,value in dictDiffNumbers.items() if value == minValue]
     return minValues[0]
-        
-    
 
 print(next_number(7) == 7)
 print(next_number(19) == 91)
