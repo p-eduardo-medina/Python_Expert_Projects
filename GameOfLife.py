@@ -18,8 +18,7 @@ def game_of_life(board):
                 for subcolumn in subcolumns:
                     if subrow!=row or subcolumn!=column:
                         try:
-                            if board[subrow][subcolumn]==1:
-                                count+=1
+                            if board[subrow][subcolumn]==1: count+=1
                         except Exception as exc: pass
             if board[row][column]==1:
                 CountRow = CountRow+'I' if count == 2 or count == 3 else CountRow + '_'
@@ -129,8 +128,8 @@ bigShape = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-print(game_of_life(example1),'___\n___\n___')
-print('\n\n\n')
+print(game_of_life(example1))
+print('___\n___\n___')
 print(game_of_life(example2),'III\nI_I\nIII')
 print('\n\n\n')
 print(game_of_life(example3),'___\n_I_\n___')
