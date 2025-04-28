@@ -46,3 +46,5 @@ except ValueTooHightError as e:
     print(e)
 except ValueTooSmall as e:
     print(e.message, e.value)
+finally:
+    print(':D')
