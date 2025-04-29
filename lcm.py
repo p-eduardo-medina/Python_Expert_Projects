@@ -6,10 +6,7 @@ def lcm(nums):
         while i*i<=n:
             if n%i==0:
                 n/=i
-                if i in listFctors.keys():
-                    listFctors[int(i)]+=1
-                else:
-                    listFctors[int(i)]=1
+                listFctors[int(i)] = listFctors[int(i)]+1 if i in listFctors.keys() else 1
             else:
                 i+=1
         if n>1:
