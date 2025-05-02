@@ -12,8 +12,8 @@ def shift_chars(alphabet, s, shifts):
     strResponse, s, lstAlphabet  = '', s[::-1], list(alphabet)
     indexChar = [lstAlphabet.index(s[index]) for index in range(len(s))]
     for index,shift in enumerate(shifts[::-1]):
-        lstAlphabet = [lstAlphabet[(index+shift)%len(lstAlphabet)]  for index in range(len(lstAlphabet))]
-        strResponse+=lstAlphabet[indexChar[index]]
+        lstAlphabet  = [lstAlphabet[(index+shift)%len(lstAlphabet)]  for index in range(len(lstAlphabet))]
+        strResponse += lstAlphabet[indexChar[index]]
     return strResponse[::-1]    
 
 from time import perf_counter
