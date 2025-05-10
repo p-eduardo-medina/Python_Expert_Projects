@@ -2,6 +2,7 @@
 def translate_word(sentence):
     pass
 
+#1234
 
 print(translate_word("have"), "avehay")
 print(translate_word("cram"), "amcray")
