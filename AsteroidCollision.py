@@ -18,8 +18,6 @@ def asteroid_collision(asteroids):
                 break
     return asteroids
 
-
-
 print(asteroid_collision([5,10,-5])==[5,10])
 print(asteroid_collision([8, -8])==[])
 print(asteroid_collision([10, 2, -5])==[10])
