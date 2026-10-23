@@ -22,8 +22,7 @@ def get_prime_factors_powers(n) -> dict:
     for i in range(3, int(math.sqrt(n)) + 1, 2):
         while n % i == 0:
             factors[i] = factors.get(i, 0) + 1
-            n //= i
-            
+            n //= i            
     if n > 2:
         factors[n] = factors.get(n, 0) + 1
     return factors
