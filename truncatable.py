@@ -19,7 +19,7 @@ def isprime(n):
             return False
     return True
 
-print(truncatable(9137))
+print(truncatable(913732581))
 print(truncatable(5939))
 print(truncatable(317))
 print(truncatable(5))
