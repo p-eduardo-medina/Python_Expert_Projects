@@ -1,6 +1,5 @@
 def ecg_seq_index(n):
-    ecgSequence = [1, 2]
-    nextNumber = 3
+    ecgSequence, nextNumber = [1, 2], 3
     while True:
         if nextNumber in ecgSequence:
             nextNumber += 1
