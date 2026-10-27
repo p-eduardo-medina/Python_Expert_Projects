@@ -5,9 +5,8 @@ def ecg_seq_index(n):
         if nextNumber in ecgSequence:
             nextNumber += 1
             continue
-        n_factors = get_prime_factors_powers(nextNumber)
-        next_factors = get_prime_factors_powers(ecgSequence[-1])
-        if not set(n_factors).isdisjoint(list(next_factors)):
+        n_factors,next_factors = get_prime_factors(nextNumber),get_prime_factors(ecgSequence[-1])
+        if not set(n_factors).isdisjoint(next_factors):
             ecgSequence.append(nextNumber)
             nextNumber = 3
         else:
@@ -16,7 +15,7 @@ def ecg_seq_index(n):
             break
     return len(ecgSequence)-1
 
-def get_prime_factors_powers(n) -> dict:
+def get_prime_factors(n) -> list:
     import math
     factors = {}
     while n % 2 == 0:
