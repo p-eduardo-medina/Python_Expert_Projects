@@ -1,6 +1,7 @@
 def extract_primes(num):
    outList = [
-                int(str(num)[i:len(str(num))-j]) for i in range(len(str(num)))
+                int(str(num)[i:len(str(num))-j]) 
+                for i in range(len(str(num)))
                 for j in range(len(str(num))-i) 
                 if is_prime(int(str(num)[i:len(str(num))-j])) and int(str(num)[i:len(str(num))-j])!=1 and str(num)[i:len(str(num))-j][0]!="0"
               ]
