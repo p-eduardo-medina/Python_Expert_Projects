@@ -1,16 +1,17 @@
 # The function is given four points with (x, y) coordinates in no particular order.
 # Determine if these points make a square and return True / False.
 # A square has four equal sides with positive length and four 90-degree angles.
-import numpy as np
 def valid_square(p1, p2, p3, p4):
-    Points = [p1,p2,p3,p4]
-    for point in Points: 
-        Directions = [ [point[0]-finalPoint[0],point[1]-finalPoint[1]] for finalPoint in Points if finalPoint!=point]
-        Angles = [ dotProduct( Directions[0], direction )*180/np.pi for direction in Directions if direction!=Directions[0] ]
-        if not (any(angle == 90 for angle in Angles) or sum(Angles)==90): return False
-    return True
+  if (p1==p2 or p1==p3 or p1==p4): return False
+  distances = []
+  for point in [p1,p2,p3,p4]:
+     lst = [p1,p2,p3,p4]
+     lst.remove(point)
+     distance = [ (point[0]-p[0])**2+(point[1]-p[1])**2 for p in lst]
+     distances.append([max(distance),min(distance)])
+  if not all(d[0]==distances[0][0] and d[1]==distances[0][1] for d in distances):return False  
+  return True  
 
-def dotProduct(v1,v2): return np.arccos(  ( v1[0]*v2[0] + v1[1]*v2[1] ) / ( np.sqrt(v1[0]**2 + v1[1]**2) * np.sqrt(v2[0]**2 + v2[1]**2) )  )
 
 
 from time import perf_counter
