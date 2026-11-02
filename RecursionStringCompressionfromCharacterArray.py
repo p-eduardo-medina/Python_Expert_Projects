@@ -5,9 +5,6 @@ def compress(c):# A string as input
     if last_index == len(c) - 1: return num
     return num+compress(c[last_index+1:])
     
-
-
-
 print(compress(["t", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "s", "s", "s", "h"])== "te14s3h")
 print(compress(["a", "a", "b", "b", "c", "c", "c"])== "a2b2c3")
 print(compress(["a"])== "a")
