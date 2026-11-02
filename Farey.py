@@ -54,5 +54,4 @@ def quicksort(arr):
     # Recursively sort the outer groups and combine them
     return quicksort(left) + middle + quicksort(right)
 
-
 print(farey(5))
