@@ -5,42 +5,21 @@ large compared to the result. Simply calculating the factorials and
 dividing will cause your program to time out. 
 See if you can think of a more efficient method.
 """
-def OptimalFactorial(n,dictFact = {}) -> list:
-    if n == 1:
-        dictFact[n] = 1
-        return n, dictFact
-    else:
-        if n in dictFact.keys():
-            return n,dictFact
-        else:
-            value,dictFact = OptimalFactorial(n-1,dictFact)[0],OptimalFactorial(n-1,dictFact)[1]       
-            dictFact[n] = value
-            return n*value, dictFact
+def nPr(n, r):#n!/(n-r)!
+  value = 1
+  for i in range(n - r + 1, n + 1):value *= i
+  return value
 
-def nPr(n, r):
-    generatorNPR = OptimalFactorial2(n,n-r)
-    factNPR = 1
-    for i in range(n-r,n):
-        val = next(generatorNPR)
-        factNPR*=val
-    return factNPR
-    
-def nCr(n, r):
-    factNCR = nPr(n,r)
-    generatorNCR = OptimalFactorial2(r,1)
-    for i in range(1,r):
-        factNCR /=next(generatorNCR)
-    return int(factNCR)
-
-def OptimalFactorial2(N,r):
-    while N>=r:
-        r+=1
-        yield r
+def nCr(n, r):#n!/(r!(n-r)!)
+	if n-r < r: r = n-r	
+	value = nPr(n, r)
+	for i in range(1, r + 1):value //= i
+	return value
 
 
-
-
-
+###Try next
+###Use the symmetry nCr(n, r) = nCr(n, n-r) to work with the smaller selection count, 
+# then cancel denominator factors during the calculation instead of building a full factorial.
 testsP = [
 	((7, 4), 840),
 	((8, 5), 6720),

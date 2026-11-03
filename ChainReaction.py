@@ -12,7 +12,7 @@ def all_explode(grid):
         for path in paths:
             explode(path)
     explode((0, 0))
-    return not any(e in ['+', 'x'] for row in grid for e in row)
+    return not any(element in ['+', 'x'] for row in grid for element in row)
 
 print(all_explode([
   ["+", "+", "0", "x", "x", "+", "0"],
