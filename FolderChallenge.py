@@ -1,31 +1,52 @@
-def last_ancestor(folders, X, Y): 
-    keys = list(folders.keys())
-    keys = keys[::-1]
-    subDict = {}
+def is_it_inside(folders, X, Y):
+    def find_path(folders, current, target):
+        if current not in folders.keys():return None
+        if target in folders[current]:
+            return 1
+        else:
+            for child in folders[current]:
+                if child in folders.keys():  
+                  if find_path(folders, child, target): 
+                    return 1
+    return find_path(folders, Y, X) is not None
     
 
-        
-    
+print(is_it_inside({
+  "A": ["B", "C", "D"],
+  "B": ["E", "F"],
+  "D": ["G", "H"],
+  "G": ["I", "J"],
+  "H": ["K"]
+}, "B",  "A")==True)
 
-last_ancestor({
+print(is_it_inside({
   "A": ["B", "C", "D"],
   "B": ["E", "F"],
   "D": ["G", "H"],
   "G": ["I", "J"],
   "H": ["K"]
-}, "I", "K") #"D"
-last_ancestor({
-  "A": ["B", "C", "D"],
-  "B": ["E", "F"],
-  "D": ["G", "H"],
-  "G": ["I", "J"],
-  "H": ["K"]
-}, "D", "I") # "D"
+}, "B",  "D")==False)
 
-last_ancestor({
+print(is_it_inside({
   "A": ["B", "C", "D"],
   "B": ["E", "F"],
   "D": ["G", "H"],
   "G": ["I", "J"],
   "H": ["K"]
-}, "G", "G") # "G"
+}, "I",  "D")==True)
+
+print(is_it_inside({
+  "A": ["B", "C", "D"],
+  "B": ["E", "F"],
+  "D": ["G", "H"],
+  "G": ["I", "J"],
+  "H": ["K"]
+}, "A", "K")==False)
+
+print(is_it_inside({
+  "A": ["B", "C", "D"],
+  "B": ["E", "F"],
+  "D": ["G", "H"],
+  "G": ["I", "J"],
+  "H": ["K"]
+}, "D", "D")==True)
