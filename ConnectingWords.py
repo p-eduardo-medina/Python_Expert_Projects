@@ -17,7 +17,7 @@ def join(lst):
         if savedIndex<minimunIndex:
             minimunIndex = savedIndex
         ansString+= lst[index+1][savedIndex:]
-    return ansString, minimunIndex
+    return [ansString, minimunIndex]
                 
 
 print(set(join(["happy", "python", "honey", "yelp", "plank", "lanky"]))== set(["happythoneyelplanky", 1]))
