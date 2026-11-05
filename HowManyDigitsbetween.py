@@ -1,11 +1,7 @@
-def digits(number):
-    import numpy as np
-    count =0
-    numstr = str(number)
-    magnitud = len(str(number))
-    listNumByMag = {}
-    for i,num in enumerate(numstr[::-1]):
-        listNumByMag[int(num)]=(i)
+def digits(n):
+    l = len(str(n))
+    print(n * l , int('1' * l),n * l - int('1' * l))
+    return n * l - int('1' * l)
         
  
 
