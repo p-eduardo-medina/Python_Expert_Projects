@@ -3,7 +3,7 @@ def count_eatable_chocolates(total_money, cost_of_one_chocolate):
   total_money = float(''.join([x for x in total_money if x in ismoney]))
   cost_of_one_chocolate = float(''.join([x for x in cost_of_one_chocolate if x in ismoney]))
   if total_money <=0 or cost_of_one_chocolate<=0: return "Invalid Input"
-  return int(total_money/cost_of_one_chocolate) + int((total_money-1)/(2*cost_of_one_chocolate))
+  return int(total_money/cost_of_one_chocolate) + int((total_money-1)/((3-1)*cost_of_one_chocolate))
 
 print(f'{count_eatable_chocolates("4$", "1$")} ➞ 5')
 print(f'{count_eatable_chocolates("55   $", "5$")}➞ 16')
