@@ -6,6 +6,6 @@ def make_dartboard(n):
 
 print(make_dartboard(1))
 print(make_dartboard(2))
-print(make_dartboard(3)) #Eliminar si son impares
+print(make_dartboard(3))
 print(make_dartboard(8))
 print(make_dartboard(5))
