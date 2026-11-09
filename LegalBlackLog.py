@@ -6,11 +6,8 @@ An integer max_daily_sessions which gives the maximum number of court sessions t
 Crucially, it is not possible to have two sessions of the same case in the same day."""
 import math
 def legalbacklog(cases, max_daily_sessions):
-    if not cases:
-        return 0
-    total_sessions = sum(cases.values())
-    days_by_capacity = math.ceil(total_sessions/max_daily_sessions)
-    return max(max(cases.values()), days_by_capacity)
+    if not cases:return 0
+    return max(max(cases.values()), math.ceil(sum(cases.values())/max_daily_sessions))
 
 print(legalbacklog({'A': 4, 'B': 3, 'C': 2}, 5) == 4)
 print(legalbacklog({'A': 4, 'B': 3, 'C': 2}, 3) == 4)
