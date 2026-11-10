@@ -1,26 +1,17 @@
 # Create a function which returns the next
 # letters alphabetically in a given string.
-# If the last letter is a "Z", change the 
+# If the last letter is a "Z", change the z
 # rest of the letters accordingly.
 def next_letters(s):
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    if s != '':
-        if s[len(s)-1]!='Z': s = s[:len(z)-1] + alphabet[alphabet.find(s[len(z)-1])+1]
-        else:
-            count = 1
-            while True:
-                if s[len(s)-count] == 'Z' and len(s)-count>0:
-                    count +=1
-                else:
-                    for i in range(count,0,-1):
-                        if len(s)-i <1:s = 'A' + s
-                        newChar = alphabet[alphabet.find(s[len(z)-i])+1] if alphabet.find(s[len(z)-i]) != len(alphabet)-1 else alphabet[0]
-                        s = s[:len(s)-i]+newChar+s[len(s)-i+1:]
-                    break    
-    else:
-        return 'A'
-    return s
-
+    if s == "":return "A"
+    AB ="abcdefghijklmnopqrstuvwxyz".upper()
+    def nlett(s):
+        if len(s)==0:return ""
+        if s[-1]=="Z":
+            if len(s)==1:return "AA"
+            else:return "A"+nlett(s[:-1])
+        else: return AB[(AB.index(s[-1])+1)]+s[::-1][1:]
+    return nlett(s)[::-1]
 
 
 TEST = [
@@ -32,7 +23,7 @@ TEST = [
 "ZYZ",
 "ZZZ",
 "ACZZZ",
-"ZZZAZAZAZAZAZZZZ",
+"ZZZAZAZAZAZAZZZZ", #######
 "",
 "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
 "EDABIS",
@@ -42,12 +33,12 @@ ANSW = [
 "B",
 "ABD",
 "AA",
-"CBA",
+"CBA",######
 "AAB",
 "ZZA",
 "AAAA",
 "ADAAA",
-"ZZZAZAZAZAZBAAAA",
+"ZZZAZAZAZAZBAAAA",######
 "A",
 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 "EDABIT",
@@ -62,7 +53,8 @@ colorama_init()
 
 
 for i, z in enumerate(ANSW): 
-    if next_letters(TEST[i]) == z:
+    p=next_letters(TEST[i])
+    if p == z:
         print(f'{Fore.GREEN}Correcto!{Style.RESET_ALL}\tEl resultado de {TEST[i]} es {z}')
     else:
         print(f'{Fore.RED}No esCorrecto!{Style.RESET_ALL}\tEl resultado de {TEST[i]} no es {z}')
