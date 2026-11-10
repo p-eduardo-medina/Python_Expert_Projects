@@ -3,18 +3,6 @@
 # alphabetical order for a string input.
 def longest_nonrepeating_substring(txt):
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    lstStrings = []
-    longestSubString = txt[0]
-    for index,char in enumerate(txt[1:len(txt)]):
-        currentIndex = alphabet.find(longestSubString[len(longestSubString)-1])
-        nextIndex = alphabet.find(char)
-        if currentIndex<nextIndex:
-            longestSubString+=alphabet[nextIndex]
-        else:
-            lstStrings.append(longestSubString)
-            longestSubString = char
-        if index == len(txt)-2: lstStrings.append(longestSubString)
-    return max(lstStrings, key=len)
     
             
             

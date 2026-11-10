@@ -13,7 +13,6 @@ def pascal_row2(n)->list:
 def pascal_row(n):
     ans = [1] * (n + 1)
     for i in range(n):
-        print(ans[i],(n-i),(i+1),(n-i)//(i+1))
         ans[i + 1] = ans[i] * (n - i) // (i + 1)
     return ans
 

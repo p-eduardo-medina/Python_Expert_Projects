@@ -1,17 +1,12 @@
-from itertools import permutations
 def within_triangle(p1, p2, p3, test):
-    list_ofPermutations = list(permutations([p1, p2, p3]))
-    list_of_Points = [ n for n in list_ofPermutations if list_ofPermutations.index(n)%2==1 ]
-    print(list_of_Points)
-    for coord in list_of_Points:
-        try:
-            m1 = (coord[0][1]-coord[1][1])/(coord[0][0]-coord[1][0])
-            m2 = (coord[0][1]-coord[2][1])/(coord[0][0]-coord[2][0])
-            mt = (test[1]-coord[0][1])/(test[0]-coord[0][0])
-            if mt > max(m1, m2) or mt < min(m1, m2): return False
-        except ZeroDivisionError:
-            continue
-    return True
+  def sign(p1, p2, p3):
+        return (p1[0] - p3[0]) * (p2[1] - p3[1]) - (p2[0] - p3[0]) * (p1[1] - p3[1])
+  d1 = sign(test, p1, p2)
+  d2 = sign(test, p2, p3)
+  d3 = sign(test, p3, p1)
+  fl_neg = (d1 < 0) and (d2 < 0) and (d3 < 0)
+  fl_pos = (d1 > 0) and (d2 > 0) and (d3 > 0)
+  return fl_neg or fl_pos
 
 
 
