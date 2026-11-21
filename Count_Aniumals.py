@@ -12,13 +12,24 @@ no animal will be found during next time.
 count = 1 (wrong)
 # """
 
+animals = ["dog", "cat", "bat", "cock", "cow", "pig", 
+  "fox", "ant", "bird", "lion", "wolf", "deer", "bear", 
+  "frog", "hen", "mole", "duck", "goat"]
 
 def count_animals(txt):
-    animals = ["dog", "cat", "bat", "cock", "cow", "pig",
-                "fox", "ant", "bird", "lion", "wolf", "deer", "bear",
-                "frog", "hen", "mole", "duck", "goat"]
-    count,result = 0,0
-    dictTxt = {}    
+	counts = []
+	
+	def f(t, c):
+		for a in animals:
+			s = t
+			for x in a: 
+				s = s.replace(x, "", 1)
+			if len(s) + len(a) == len(t): 
+				f(s, c + 1)
+		counts.append(c)
+		
+	f(txt, 0)
+	return max(counts)
     
 
 print(count_animals("dogcat")==2)
